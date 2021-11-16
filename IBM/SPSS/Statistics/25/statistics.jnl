@@ -1,0 +1,289 @@
+Tuesday, February 16, 2021 11:42:16 AM SGT
+*>Error # 7001
+*>There is no license for IBM SPSS Statistics.  This could be due to a missing
+*>license file or no more network licenses available.  For detailed information
+*>about this problem, run the 'showlic' utility found in the product
+*>installation directory.
+Tuesday, February 16, 2021 11:46:56 AM SGT
+*>Error # 7001
+*>There is no license for IBM SPSS Statistics.  This could be due to a missing
+*>license file or no more network licenses available.  For detailed information
+*>about this problem, run the 'showlic' utility found in the product
+*>installation directory.
+Tuesday, February 16, 2021 4:06:30 PM SGT
+NEW FILE.
+DATASET NAME DataSet1 WINDOW=FRONT.
+Thursday, April 22, 2021 11:31:52 AM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Thursday, April 22, 2021 11:38:32 AM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+SORT CASES BY usia(A).
+USE ALL.
+COMPUTE filter_$=(jk=1).
+VARIABLE LABELS filter_$ 'jk=1 (FILTER)'.
+VALUE LABELS filter_$ 0 'Not Selected' 1 'Selected'.
+FORMATS filter_$ (f1.0).
+FILTER BY filter_$.
+EXECUTE.
+FILTER OFF.
+USE ALL.
+EXECUTE.
+COMPUTE imt=bb/ (tb/100 * tb / 100).
+VARIABLE LABELS  imt 'indeks masa tubuh'.
+EXECUTE.
+RECODE usia (Lowest thru 40=1) (41 thru 50=2) (51 thru Highest=3) INTO tusia.
+VARIABLE LABELS  tusia 'tingkat usia'.
+EXECUTE.
+GRAPH
+  /BAR(SIMPLE)=COUNT BY jk.
+GRAPH
+  /BAR(GROUPED)=COUNT BY jk BY pendidikan.
+GRAPH
+  /BAR(STACK)=COUNT BY jk BY tusia.
+GRAPH
+  /PIE=PCT BY jk.
+GRAPH
+  /LINE(SIMPLE)=COUNT BY bb.
+GRAPH
+  /LINE(MULTIPLE)=VALUE(bb tb).
+GRAPH
+  /LINE(DROP)=VALUE(bb tb).
+GRAPH
+  /SCATTERPLOT(BIVAR)=bb WITH imt
+  /MISSING=LISTWISE.
+GRAPH
+  /HISTOGRAM=usia.
+EXAMINE VARIABLES=usia BY jk
+  /PLOT=BOXPLOT
+  /STATISTICS=NONE
+  /NOTOTAL.
+FREQUENCIES VARIABLES=jk pendidikan tusia
+  /PIECHART PERCENT
+  /ORDER=ANALYSIS.
+EXAMINE VARIABLES=usia tb imt
+  /PLOT BOXPLOT STEMLEAF NPPLOT
+  /COMPARE GROUPS
+  /STATISTICS DESCRIPTIVES
+  /CINTERVAL 95
+  /MISSING LISTWISE
+  /NOTOTAL.
+EXAMINE VARIABLES=usia BY jk
+  /PLOT BOXPLOT STEMLEAF NPPLOT
+  /COMPARE GROUPS
+  /STATISTICS DESCRIPTIVES
+  /CINTERVAL 95
+  /MISSING LISTWISE
+  /NOTOTAL.
+
+SAVE OUTFILE='D:\Wulan\Latihan praktek spss.sav'
+  /COMPRESSED.
+*>Error.  Command name: SAVE
+*>Duplicate variable name NAMA being saved.  (DATA 1505)
+*>Error # 1407
+*>Error when writing the dictionary to a new data file.
+*>Warning # 5322.  Command name: SAVE
+*>The attempt to save the data file has failed because the disk is full, an I/O
+*>error has occurred, the variable dictionary is invalid, or the task was
+*>interrupted.  IF SAVING OVER AN EXISTING FILE, THAT FILE HAS BEEN LOST.
+Thursday, April 22, 2021 2:10:39 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Thursday, April 22, 2021 2:12:30 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Thursday, April 22, 2021 2:13:35 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+GET
+  FILE='D:\Wulan\Remidi_kelas_NIM_nama anda_data.sav'.
+*>Warning # 5281.  Command name: GET FILE
+*>SPSS Statistics is running in Unicode encoding mode.  This file is encoded in
+*>a locale-specific (code page) encoding.  The defined width of any string
+*>variables are automatically tripled in order to avoid possible data loss.  You
+*>can use ALTER TYPE to set the width of string variables to the width of the
+*>longest observed value for each string variable.
+ALTER TYPE ALL(A=AMIN).
+DATASET NAME DataSet1 WINDOW=FRONT.
+Monday, April 26, 2021 10:02:39 AM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 11:21:20 AM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 12:39:13 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+NEW FILE.
+DATASET NAME DataSet1 WINDOW=FRONT.
+SORT CASES BY usia(A).
+Monday, May 3, 2021 3:13:31 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 3:19:57 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 3:22:29 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+USE ALL.
+COMPUTE filter_$=(jk = 1).
+VARIABLE LABELS filter_$ 'jk = 1 (FILTER)'.
+VALUE LABELS filter_$ 0 'Not Selected' 1 'Selected'.
+FORMATS filter_$ (f1.0).
+FILTER BY filter_$.
+EXECUTE.
+FILTER OFF.
+USE ALL.
+EXECUTE.
+COMPUTE MAP=TDsistolik + (2 * TDdiastolik ) / 3.
+VARIABLE LABELS  MAP 'Mean Arterial Pressure'.
+EXECUTE.
+COMPUTE MAP=TDsistolik + (2 * TDdiastolik ) / 3.
+VARIABLE LABELS  MAP 'Mean Arterial Pressure'.
+EXECUTE.
+SORT CASES BY usia(A).
+RECODE usia (Lowest thru 3=1) (4 thru 12=2) (13 thru 17=3) (18 thru Highest=4) INTO tusia.
+VARIABLE LABELS  tusia 'tingkat usia'.
+EXECUTE.
+GRAPH
+  /BAR(SIMPLE)=COUNT BY jk.
+GRAPH
+  /BAR(GROUPED)=COUNT BY jk BY tusia.
+Monday, May 3, 2021 5:41:52 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+SORT CASES BY usia(A).
+USE ALL.
+COMPUTE filter_$=(jk = 1).
+VARIABLE LABELS filter_$ 'jk = 1 (FILTER)'.
+VALUE LABELS filter_$ 0 'Not Selected' 1 'Selected'.
+FORMATS filter_$ (f1.0).
+FILTER BY filter_$.
+EXECUTE.
+FILTER OFF.
+USE ALL.
+EXECUTE.
+Monday, May 3, 2021 6:34:05 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+SORT CASES BY usia(A).
+USE ALL.
+COMPUTE filter_$=(jk = 1).
+VARIABLE LABELS filter_$ 'jk = 1 (FILTER)'.
+VALUE LABELS filter_$ 0 'Not Selected' 1 'Selected'.
+FORMATS filter_$ (f1.0).
+FILTER BY filter_$.
+EXECUTE.
+FILTER OFF.
+USE ALL.
+EXECUTE.
+COMPUTE MAP=Tdsistolik + (2 * Tddiastolik) / 3.
+VARIABLE LABELS  MAP 'Mean Arterial Pressure'.
+EXECUTE.
+RECODE usia (Lowest thru 3=1) (4 thru 12=2) (13 thru 17=3) (18 thru Highest=4) INTO tusia.
+VARIABLE LABELS  tusia 'tingkat usia'.
+EXECUTE.
+GRAPH
+  /BAR(SIMPLE)=COUNT BY jk.
+GRAPH
+  /BAR(GROUPED)=COUNT BY jk BY tusia.
+GRAPH
+  /PIE=COUNT BY jk.
+GRAPH
+  /LINE(SIMPLE)=COUNT BY rr.
+GRAPH
+  /LINE(MULTIPLE)=COUNT BY rr BY nadi.
+GRAPH
+  /LINE(MULTIPLE)=VALUE(rr nadi).
+GRAPH
+  /LINE(DROP)=VALUE(rr nadi).
+GRAPH
+  /SCATTERPLOT(BIVAR)=rr WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /LINE(SIMPLE)=COUNT BY nadi.
+GRAPH
+  /LINE(SIMPLE)=COUNT BY satoksigen.
+GRAPH
+  /LINE(MULTIPLE)=COUNT BY nadi BY satoksigen.
+GRAPH
+  /LINE(MULTIPLE)=VALUE(nadi satoksigen).
+GRAPH
+  /LINE(MULTIPLE)=VALUE(satoksigen rr).
+GRAPH
+  /SCATTERPLOT(BIVAR)=nadi WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /LINE(DROP)=VALUE(nadi satoksigen).
+GRAPH
+  /LINE(DROP)=VALUE(satoksigen rr).
+GRAPH
+  /SCATTERPLOT(BIVAR)=rr WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /SCATTERPLOT(BIVAR)=rr WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /LINE(MULTIPLE)=VALUE(satoksigen rr).
+GRAPH
+  /LINE(DROP)=VALUE(satoksigen rr).
+GRAPH
+  /SCATTERPLOT(BIVAR)=rr WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /SCATTERPLOT(BIVAR)=satoksigen WITH MAP
+  /MISSING=LISTWISE.
+GRAPH
+  /HISTOGRAM=usia.
+EXAMINE VARIABLES=usia BY jk
+  /PLOT=BOXPLOT
+  /STATISTICS=NONE
+  /NOTOTAL.
+EXAMINE VARIABLES=rr nadi satoksigen
+  /PLOT BOXPLOT STEMLEAF NPPLOT
+  /COMPARE GROUPS
+  /STATISTICS DESCRIPTIVES
+  /CINTERVAL 95
+  /MISSING LISTWISE
+  /NOTOTAL.
+CORRELATIONS
+  /VARIABLES=usia satoksigen
+  /PRINT=TWOTAIL NOSIG
+  /MISSING=PAIRWISE.
+
+SAVE OUTFILE='D:\Nur Endah W_lembar kerja.sav'
+  /COMPRESSED.
+Monday, May 3, 2021 8:13:04 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 8:13:58 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+Monday, May 3, 2021 8:14:51 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
+GET
+  FILE='D:\Nur Endah W_lembar kerja.sav'.
+DATASET NAME DataSet1 WINDOW=FRONT.
+Monday, May 3, 2021 8:18:47 PM ICT
+*>Warning # 849 in column 23.  Text: en_AI
+*>The LOCALE subcommand of the SET command has an invalid parameter.  It could
+*>not be mapped to a valid backend locale.
